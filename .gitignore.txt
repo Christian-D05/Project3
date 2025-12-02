@@ -1,0 +1,29 @@
+# JetBrains / CLion
+.idea/
+*.iml
+
+# CMake build output
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# Ninja build files
+*.ninja
+.ninja_*
+build/
+out/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Executables / Objects
+*.o
+*.obj
+*.exe
+*.out
+
+# RTF files (never track datasets in RTF)
+*.rtf
