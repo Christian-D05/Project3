@@ -2,5 +2,13 @@ cmake_minimum_required(VERSION 3.30)
 project(Project3COP3530)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED true)
 
-add_executable(Project3COP3530 main.cpp)
+include_directories(include)
+
+set(SOURCES
+	main.cpp
+	srs/dsu.cpp
+)
+
+add_executable(Project3COP3530 ${SOURCES})
