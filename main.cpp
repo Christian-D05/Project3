@@ -104,7 +104,7 @@ int main() {
     cout << "Loaded original graph:" << endl;
     cout << " Original edges: " << edges.size() << endl;
 
-    int time = 21;
+    int times = 21;
     int bridges_per_pair = 20;
 
     auto enlarged = enlarge_graph(edges, times, bridges_per_pair)
