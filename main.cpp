@@ -113,10 +113,16 @@ int main() {
     write_edge_list(outputFile, enlarged);
 
     cout << "Enlargement Complete" << endl;
+    cout << "Copies: " << times << endl;
+    cout << "Bridge edges: " << bridges_per_pair << endl;
+    cout << "Original edges: " << edges.size() << endl;
+    cout << "Enlarged edges: " << edges.size() << endl;
+    cout << "Output file: " << outputFile << endl;
 
-    string fileName = "power-US-Grid.rtf"; //rtf file name maybe add entry option but i think necessary
 
-    auto adjacencyList = GraphImport(fileName); //makes graph
+    // string fileName = "power-US-Grid.rtf"; //rtf file name maybe add entry option but i think necessary
+
+    // auto adjacencyList = GraphImport(fileName); //makes graph
     auto result = PrimsAlgorithm(adjacencyList); //runs algorithm and calculates time
 
 
