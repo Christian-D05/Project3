@@ -1,3 +1,4 @@
+#include ""
 #include "enlarger.h"
 #include "dsu.h"
 #include <iostream>
@@ -119,6 +120,24 @@ int main() {
     cout << "Enlarged edges: " << edges.size() << endl;
     cout << "Output file: " << outputFile << endl;
 
+    auto weighted_edges = creat_weighted_edges(enlarged);
+
+    int max_node = 0;
+    for (auto& p : enlarged) {
+        max_node = max(max_node, max(p.first, p.second));
+    }
+
+    int num_nodes = max_node + 1;
+
+    auto start chrono::high_resolution_clock::now();
+    long long mst_weight = kruskal_mst(weighted_edges, num_nodes);
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed = end - start;
+
+    cout << "Kruskal's MST Results" << endl;
+    cout << "Estimated number of nodes: " << num_nodes << endl;
+    cout << "MST total weight: " << mst_weight << endl;
+    cout << "Kruskal runtime: " << elapsed.count() << "seconds" << endl;
 
     // string fileName = "power-US-Grid.rtf"; //rtf file name maybe add entry option but i think necessary
 

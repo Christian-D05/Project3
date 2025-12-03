@@ -10,6 +10,7 @@ set(SOURCES
 	main.cpp
 	src/dsu.cpp
 	src/enlarger.cpp
+	src/kruskal.cpp
 )
 
 add_executable(Project3COP3530 ${SOURCES})
