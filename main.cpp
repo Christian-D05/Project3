@@ -1,4 +1,4 @@
-#include ""
+#include "kruskal.h"
 #include "enlarger.h"
 #include "dsu.h"
 #include <iostream>

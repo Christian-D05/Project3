@@ -65,6 +65,13 @@ build CMakeFiles/Project3COP3530.dir/src/enlarger.cpp.obj: CXX_COMPILER__Project
   OBJECT_DIR = CMakeFiles\Project3COP3530.dir
   OBJECT_FILE_DIR = CMakeFiles\Project3COP3530.dir\src
 
+build CMakeFiles/Project3COP3530.dir/src/kruskal.cpp.obj: CXX_COMPILER__Project3COP3530_unscanned_ C$:/Users/cdomm/Documents/Project$ 3/Project3/src/kruskal.cpp || cmake_object_order_depends_target_Project3COP3530
+  DEP_FILE = CMakeFiles\Project3COP3530.dir\src\kruskal.cpp.obj.d
+  FLAGS = -std=gnu++17
+  INCLUDES = -I"C:/Users/cdomm/Documents/Project 3/Project3/include"
+  OBJECT_DIR = CMakeFiles\Project3COP3530.dir
+  OBJECT_FILE_DIR = CMakeFiles\Project3COP3530.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Project3COP3530
@@ -73,7 +80,7 @@ build CMakeFiles/Project3COP3530.dir/src/enlarger.cpp.obj: CXX_COMPILER__Project
 #############################################
 # Link the executable Project3COP3530.exe
 
-build Project3COP3530.exe: CXX_EXECUTABLE_LINKER__Project3COP3530_ CMakeFiles/Project3COP3530.dir/main.cpp.obj CMakeFiles/Project3COP3530.dir/src/dsu.cpp.obj CMakeFiles/Project3COP3530.dir/src/enlarger.cpp.obj
+build Project3COP3530.exe: CXX_EXECUTABLE_LINKER__Project3COP3530_ CMakeFiles/Project3COP3530.dir/main.cpp.obj CMakeFiles/Project3COP3530.dir/src/dsu.cpp.obj CMakeFiles/Project3COP3530.dir/src/enlarger.cpp.obj CMakeFiles/Project3COP3530.dir/src/kruskal.cpp.obj
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Project3COP3530.dir
   POST_BUILD = cd .

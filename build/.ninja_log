@@ -1,5 +1,5 @@
 # ninja log v6
-30	1898	7864356245163747	CMakeFiles/Project3COP3530.dir/src/enlarger.cpp.obj	1bb02ec777a68e8e
-26	703	7864356245133726	CMakeFiles/Project3COP3530.dir/src/dsu.cpp.obj	2961de85013ca0ed
 18	1011	7864360131680119	CMakeFiles/Project3COP3530.dir/main.cpp.obj	9680d12512a5dded
+26	703	7864356245133726	CMakeFiles/Project3COP3530.dir/src/dsu.cpp.obj	2961de85013ca0ed
 1012	1205	7864360141614576	Project3COP3530.exe	a3940b32f752075c
+30	1898	7864356245163747	CMakeFiles/Project3COP3530.dir/src/enlarger.cpp.obj	1bb02ec777a68e8e
