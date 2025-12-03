@@ -29,7 +29,7 @@ long long kruskal_mst(vector<Edge>& edges, int num_nodes) {
 	long long total_weight = 0;
 	int edges_used = 0;
 	
-	for (auto& e, : edges) {
+	for (auto& e : edges) {
 		if (dsu.find(e.u) != dsu.find(e.v)) {
 			dsu.unite(e.u, e.v);
 			total_weight += e.w;

@@ -117,10 +117,10 @@ int main() {
     cout << "Copies: " << times << endl;
     cout << "Bridge edges: " << bridges_per_pair << endl;
     cout << "Original edges: " << edges.size() << endl;
-    cout << "Enlarged edges: " << edges.size() << endl;
+    cout << "Enlarged edges: " << enlarged.size() << endl;
     cout << "Output file: " << outputFile << endl;
 
-    auto weighted_edges = creat_weighted_edges(enlarged);
+    auto weighted_edges = create_weighted_edges(enlarged);
 
     int max_node = 0;
     for (auto& p : enlarged) {
@@ -129,7 +129,7 @@ int main() {
 
     int num_nodes = max_node + 1;
 
-    auto start chrono::high_resolution_clock::now();
+    auto start = chrono::high_resolution_clock::now();
     long long mst_weight = kruskal_mst(weighted_edges, num_nodes);
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed = end - start;
