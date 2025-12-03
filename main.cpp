@@ -109,6 +109,7 @@ int main() {
     bool originalLoaded = false;
 
     while (true) {
+        cout << endl;
         cout << "PROJECT 3 MENU" << endl;
         cout << endl;
         cout << "1. Load original power grid dataset " << endl;
@@ -176,15 +177,15 @@ int main() {
             cout << "Kruskal runtime: " << elapsed.count() << " seconds" << endl;
         }
         else if (choice == 4) {
-            cout << "WIP/INC" << endl;
+            cout << "---WIP/INC---" << endl;
             continue;
         }
         else if (choice == 5) {
-            cout << "WIP/INC" << endl;
+            cout << "---WIP/INC---" << endl;
             continue;
         }
         else if (choice == 6) {
-            cout << "WIP/INC" << endl;
+            cout << "---WIP/INC---" << endl;
             continue;
         }
         else if (choice == 7) {

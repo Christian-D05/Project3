@@ -1,6 +1,8 @@
 # ninja log v6
-21	936	7864385736476568	CMakeFiles/Project3COP3530.dir/main.cpp.obj	9680d12512a5dded
-26	703	7864356245133726	CMakeFiles/Project3COP3530.dir/src/dsu.cpp.obj	2961de85013ca0ed
-936	1095	7864385745614882	Project3COP3530.exe	ff14a5d77bc7add
-25	656	7864385736506597	CMakeFiles/Project3COP3530.dir/src/enlarger.cpp.obj	1bb02ec777a68e8e
 33	563	7864383987644685	CMakeFiles/Project3COP3530.dir/src/kruskal.cpp.obj	698d46f3cdc2649b
+25	656	7864385736506597	CMakeFiles/Project3COP3530.dir/src/enlarger.cpp.obj	1bb02ec777a68e8e
+936	1095	7864385745614882	Project3COP3530.exe	ff14a5d77bc7add
+26	703	7864356245133726	CMakeFiles/Project3COP3530.dir/src/dsu.cpp.obj	2961de85013ca0ed
+21	936	7864385736476568	CMakeFiles/Project3COP3530.dir/main.cpp.obj	9680d12512a5dded
+21	938	7864400704002141	CMakeFiles/Project3COP3530.dir/main.cpp.obj	9680d12512a5dded
+939	1102	7864400713184148	Project3COP3530.exe	ff14a5d77bc7add
