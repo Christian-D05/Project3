@@ -101,43 +101,101 @@ int main() {
     string inputFile = "power-US-Grid.txt";
     string outputFile = "power-US-Grid-100k.txt";
 
-    auto edges = read_edge_list(inputFile);
+    vector<pair<int, int>> edges;
+    vector<pair<int, int>> enlarged;
+    vector<Edge> weighted_edges;
 
-    cout << "Loaded original graph:" << endl;
-    cout << " Original edges: " << edges.size() << endl;
+    bool enlargedLoaded = false;
+    bool originalLoaded = false;
 
-    int times = 21;
-    int bridges_per_pair = 20;
+    while (true) {
+        cout << "PROJECT 3 MENU" << endl;
+        cout << endl;
+        cout << "1. Load original power grid dataset " << endl;
+        cout << "2. Enlarge dataset to 100k nodes" << endl;
+        cout << "3. Run Kruskal's MST" << endl;
+        cout << "4. Run Prim's MST" << endl;
+        cout << "5. Network failure simulation test " << endl;
+        cout << "6. Performance comparison" << endl;
+        cout << "7. Quit" << endl;
+        cout << "Enter your choice" << endl;
 
-    auto enlarged = enlarge_graph(edges, times, bridges_per_pair);
+        int choice;
+        cin >> choice;
+        cout << endl;
 
-    write_edge_list(outputFile, enlarged);
+        if (choice == 1) {
+            edges = read_edge_list(inputFile);
+            originalLoaded = true;
+            cout << "Loaded original graph" << endl;
+            cout << "Original edges: " << edges.size() << endl;
+        }
+        else if (choice == 2) {
+            if (!originalLoaded) {
+                cout << "Error: Load original dataset first." << endl;
+                continue;
+            }
+            int times = 21;
+            int bridges_per_pair = 20;
 
-    cout << "Enlargement Complete" << endl;
-    cout << "Copies: " << times << endl;
-    cout << "Bridge edges: " << bridges_per_pair << endl;
-    cout << "Original edges: " << edges.size() << endl;
-    cout << "Enlarged edges: " << enlarged.size() << endl;
-    cout << "Output file: " << outputFile << endl;
+            enlarged = enlarge_graph(edges, times, bridges_per_pair);
+            write_edge_list(outputFile, enlarged);
+            enlargedLoaded = true;
 
-    auto weighted_edges = create_weighted_edges(enlarged);
+            cout << "Enlargement Complete" << endl;
+            cout << "Copies: " << times << endl;
+            cout << "Bridge edges: " << bridges_per_pair << endl;
+            cout << "Original edges: " << edges.size() << endl;
+            cout << "Enlarged edges: " << enlarged.size() << endl;
+            cout << "Output file: " << outputFile << endl;
+        }
+        else if (choice == 3) {
+            if (!enlargedLoaded) {
+                cout << "Error: You must enlarge the dataset first." << endl;
+                continue;
+            }
 
-    int max_node = 0;
-    for (auto& p : enlarged) {
-        max_node = max(max_node, max(p.first, p.second));
+            cout << "Running Kruskal..." << endl;
+            weighted_edges = create_weighted_edges(enlarged);
+
+            int max_node = 0;
+            for (auto& p : enlarged) {
+                max_node = max(max_node, max(p.first, p.second));
+            }
+
+            int num_nodes = max_node + 1;
+
+            auto start = chrono::high_resolution_clock::now();
+            long long mst_weight = kruskal_mst(weighted_edges, num_nodes);
+            auto end = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed = end - start;
+
+            cout << "Kruskal's MST Results" << endl;
+            cout << "Estimated number of nodes: " << num_nodes << endl;
+            cout << "MST total weight: " << mst_weight << endl;
+            cout << "Kruskal runtime: " << elapsed.count() << " seconds" << endl;
+        }
+        else if (choice == 4) {
+            cout << "WIP/INC" << endl;
+            continue;
+        }
+        else if (choice == 5) {
+            cout << "WIP/INC" << endl;
+            continue;
+        }
+        else if (choice == 6) {
+            cout << "WIP/INC" << endl;
+            continue;
+        }
+        else if (choice == 7) {
+            cout << "Exiting program..." << endl;
+            break;
+        }
+        else {
+            cout << "ERROR: Please enter valid choice." << endl;
+            continue;
+        }
     }
-
-    int num_nodes = max_node + 1;
-
-    auto start = chrono::high_resolution_clock::now();
-    long long mst_weight = kruskal_mst(weighted_edges, num_nodes);
-    auto end = chrono::high_resolution_clock::now();
-    chrono::duration<double> elapsed = end - start;
-
-    cout << "Kruskal's MST Results" << endl;
-    cout << "Estimated number of nodes: " << num_nodes << endl;
-    cout << "MST total weight: " << mst_weight << endl;
-    cout << "Kruskal runtime: " << elapsed.count() << "seconds" << endl;
 
     // string fileName = "power-US-Grid.rtf"; //rtf file name maybe add entry option but i think necessary
 
