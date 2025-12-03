@@ -1,3 +1,5 @@
+#include "enlarger.h"
+#include "dsu.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -94,13 +96,27 @@ unordered_map<int, vector<pair<int,int>>> GraphImport(string fileName) { //our d
 
 int main() {
 
+    string inputFile = "power-US-Grid.txt";
+    string outputFile = "power-US-Grid-100k.txt";
 
+    auto edges = read_edge_list(inputFile);
 
+    cout << "Loaded original graph:" << endl;
+    cout << " Original edges: " << edges.size() << endl;
 
-  string fileName = "power-US-Grid.rtf"; //rtf file name maybe add entry option but i think necessary
+    int time = 21;
+    int bridges_per_pair = 20;
 
-  auto adjacencyList = GraphImport(fileName); //makes graph
-  auto result = PrimsAlgorithm(adjacencyList); //runs algorithm and calculates time
+    auto enlarged = enlarge_graph(edges, times, bridges_per_pair)
+
+    write_edge_list(outputFile, enlarged);
+
+    cout << "Enlargement Complete" << endl;
+
+    string fileName = "power-US-Grid.rtf"; //rtf file name maybe add entry option but i think necessary
+
+    auto adjacencyList = GraphImport(fileName); //makes graph
+    auto result = PrimsAlgorithm(adjacencyList); //runs algorithm and calculates time
 
 
 

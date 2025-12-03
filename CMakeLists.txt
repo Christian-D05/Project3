@@ -9,6 +9,7 @@ include_directories(include)
 set(SOURCES
 	main.cpp
 	srs/dsu.cpp
+	srs/enlarger.cpp
 )
 
 add_executable(Project3COP3530 ${SOURCES})
