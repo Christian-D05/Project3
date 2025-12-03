@@ -11,8 +11,10 @@
 #include <unordered_map>
 #include <set>
 #include <chrono>
-using namespace std;
+#include <queue>
+#include <functional>
 
+using namespace std;
 
 vector<pair<int,int>> PrimsAlgorithm(unordered_map<int, vector<pair<int,int>>> targetList) { //exam reviews, Weiss, and Open DSA
 
@@ -59,7 +61,6 @@ auto end = chrono::high_resolution_clock::now(); //stop the clock
 return edges;
 
 }
-
 
 unordered_map<int, vector<pair<int,int>>> GraphImport(string fileName) { //our data set was unweighted so added random 1-10 weights. can be adjusted
 
