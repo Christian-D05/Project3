@@ -107,7 +107,7 @@ int main() {
     int times = 21;
     int bridges_per_pair = 20;
 
-    auto enlarged = enlarge_graph(edges, times, bridges_per_pair)
+    auto enlarged = enlarge_graph(edges, times, bridges_per_pair);
 
     write_edge_list(outputFile, enlarged);
 
