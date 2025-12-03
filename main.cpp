@@ -142,7 +142,7 @@ int main() {
     // string fileName = "power-US-Grid.rtf"; //rtf file name maybe add entry option but i think necessary
 
     // auto adjacencyList = GraphImport(fileName); //makes graph
-    auto result = PrimsAlgorithm(adjacencyList); //runs algorithm and calculates time
+    // auto result = PrimsAlgorithm(adjacencyList); //runs algorithm and calculates time
 
 
 
